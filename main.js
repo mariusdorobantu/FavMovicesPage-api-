@@ -11,9 +11,6 @@ fetch(url)
     })
     .then(data => {
         console.log(data)
-    
-    // const maximumContainers = 6;
-
         data.forEach((movie, index) => {
             const moviesContainer = document.createElement('div');
             moviesContainer.classList.add('movieContainer');
