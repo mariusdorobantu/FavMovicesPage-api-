@@ -1,17 +1,16 @@
-const url = 'http://127.0.0.1:5500/movies.json';
+const url = 'movies.json';
 const apiContent = document.querySelector('.apiContent');
 const starImgUrl = 'star-filled.svg';
 
 fetch(url)
     .then(response => {
         if(!response.ok) {
-            throw new Error(`HTTML error! Status: ${response.status}`);
+            throw new Error(`HTML error! Status: ${response.status}`);
         }
         return response.json();
     })
     .then(data => {
-        console.log(data)
-        data.forEach((movie, index) => {
+        data.forEach((movie) => {
             const moviesContainer = document.createElement('div');
             moviesContainer.classList.add('movieContainer');
 
